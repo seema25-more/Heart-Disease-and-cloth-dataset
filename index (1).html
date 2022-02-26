@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ml.css')}}">
+</head>
+<body>
+ <div class="login">
+     <h1 style = "font-size:60px;  color:white; text-align:center;"> Heart Disease Prediction </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Sex" placeholder="Sex" required="required" />
+		<input type="text" name="Op" placeholder="Op" required="required" />
+		<input type="text" name="trestbps" placeholder="trestbps" required="required" />
+        <input type="text" name="chol" placeholder="chol" required="required" />
+        <input type="text" name="fbs" placeholder="fbs" required="required" />
+        <input type="text" name="restcg" placeholder="restcg" required="required" />
+        <input type="text" name="thalach" placeholder="thalach" required="required" />
+        <input type="text" name="exang" placeholder="exang" required="required" />
+        <input type="text" name="oldpeak" placeholder="oldpeak" required="required" />
+        <input type="text" name="slope" placeholder="slope" required="required" />
+        <input type="text" name="ca" placeholder="ca" required="required" />
+        <input type="text" name="thal" placeholder="thal" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
